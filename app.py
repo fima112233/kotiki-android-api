@@ -4,7 +4,8 @@ import sqlite3
 import random
 
 app = Flask(__name__)
-
+with app.app_context():
+    init_db()
 api = Api(app, version='1.0', title='Котики — Твоё будущее API',
           description='API для котиков: регистрация, лайки, друзья, достижения',
           doc='/api/docs')
